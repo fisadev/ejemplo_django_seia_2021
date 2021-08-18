@@ -1,0 +1,34 @@
+<html>
+<head>
+</head>
+
+<body>
+
+    <h1>Contáctenos aquí</h1>
+
+    <form method="POST" action=".">
+        {% csrf_token %}
+
+        <p>
+            <label for="asunto">Asunto:</label>
+            <input type="text" name="asunto" placeholder="Asunto de ejemplo" id="asunto"/>
+        </p>
+        <p>
+            <label for="texto">Consulta:</label>
+            <textarea name="texto"></textarea>
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" name="email"/>
+        </p>
+
+        <p>
+            <label for="pass">Password:</label>
+            <input type="password" name="pass"/>
+        </p>
+
+        <input type="submit" value="Enviar!" />
+    </form>
+
+</body>
+</html>
