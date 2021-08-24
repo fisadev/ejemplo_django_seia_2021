@@ -15,3 +15,4 @@ class Noticia(models.Model):
     archivada = models.BooleanField(default=False)
     denuncias = models.IntegerField(default=0)
     categoria = models.ForeignKey(Categoria, blank=True, null=True, on_delete=models.CASCADE)
+    fecha_publicacion = models.DateTimeField(null=True, blank=True)
