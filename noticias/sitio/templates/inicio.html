@@ -1,10 +1,12 @@
-<h1>noticias.com</h1>
+{% extends 'base.html' %}
 
-<p>gracias por visitarnos!</p>
+{% block nombre_seccion %}Inicio{% endblock %}
 
-{% for noticia in lista_noticias %}
-    <h3>{{ noticia.fecha }} {{ noticia.titulo }}</h3>
-    <p>{{ noticia.texto }}</p>
-{% endfor %}
+{% block contenido%}
+    {% include 'publicidad.html' %}
 
-
+    {% for noticia in lista_noticias %}
+        <h3>{{ noticia.fecha|date:"D d M Y" }} {{ noticia.titulo|upper }}</h3>
+        <p>{{ noticia.texto }}</p>
+    {% endfor %}
+{% endblock %}

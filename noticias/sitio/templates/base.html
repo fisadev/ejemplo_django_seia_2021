@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página de ejemplo</title>
+    <meta charset="utf-8"/>
+    <link href="{% static 'estilos.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <h1>noticias.com</h1>
+    <h3>Sección: {% block nombre_seccion %}{% endblock %}</h3>
+
+    <p>gracias por visitarnos!</p>
+
+    {% block contenido %}
+        <p>Vacío</p>
+    {% endblock %}
+
+    <script src="{% static 'logica.js' %}"></script>
+</body>
+</html>
+
+

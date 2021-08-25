@@ -1,9 +1,8 @@
-<html>
-<head>
-</head>
+{% extends 'base.html' %}
 
-<body>
+{% block nombre_seccion %}Ejemplo form django{% endblock %}
 
+{% block contenido%}
     <h1>Contáctenos aquí</h1>
 
     <form method="POST" action=".">
@@ -14,5 +13,5 @@
         <input type="submit" value="Enviar!" />
     </form>
 
-</body>
-</html>
+    {% include 'publicidad.html' %}
+{% endblock %}

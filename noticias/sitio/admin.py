@@ -5,8 +5,8 @@ from sitio.models import Noticia, Categoria
 
 @admin.register(Noticia)
 class AdminNoticia(admin.ModelAdmin):
-    list_display = ('id', 'titulo', 'fecha', 'categoria')
-    list_filter = ('archivada', 'fecha', 'categoria')
+    list_display = ('id', 'titulo', 'fecha', 'categoria', 'estado')
+    list_filter = ('archivada', 'fecha', 'categoria', 'estado')
     search_fields = ('texto', )
     date_hierarchy = 'fecha'
 
