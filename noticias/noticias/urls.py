@@ -23,5 +23,7 @@ urlpatterns = [
     path('inicio/', views.inicio, name="inicio"),
     path('ejemplo_form_pelado/', views.ejemplo_form_pelado),
     path('ejemplo_form_django/', views.ejemplo_form_django),
+    path('api/cantidades/', views.cantidades),
+    path('api/cantidades/html/', views.cantidades_html),
     path('admin/', admin.site.urls),
 ]

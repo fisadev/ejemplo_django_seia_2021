@@ -1,12 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block nombre_seccion %}Inicio{% endblock %}
 
 {% block contenido%}
     {% include 'publicidad.html' %}
 
+    <div id="cantidades">Nada</div>
+
+    <div>
+        <p>Cantidad total desde json: <span id="cantidad_total_json">0</span></p>
+        <p>Cantidad archivadas desde json: <span id="cantidad_archivadas_json">0</span></p>
+    </div>
+
     {% for noticia in lista_noticias %}
         <h3>{{ noticia.fecha|date:"D d M Y" }} {{ noticia.titulo|upper }}</h3>
         <p>{{ noticia.texto }}</p>
     {% endfor %}
+
+    <script src="{% static 'actualizar_cantidades.js' %}"></script>
 {% endblock %}

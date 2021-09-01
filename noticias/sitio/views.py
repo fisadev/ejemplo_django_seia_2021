@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 
 from sitio.models import Noticia
 from sitio.forms import FormContacto
@@ -54,4 +55,17 @@ def ejemplo_form_django(request):
     return render(request, 'ejemplo_form_django.html', {'form': form})
 
 
+def cantidades(request):
+    datos = {
+        "cantidad_noticias": Noticia.objects.count(),
+        "cantidad_noticias_archivadas": Noticia.objects.filter(archivada=True).count(),
+    }
+    return JsonResponse(datos)
 
+
+def cantidades_html(request):
+    datos = {
+        "cantidad_noticias": Noticia.objects.count(),
+        "cantidad_noticias_archivadas": Noticia.objects.filter(archivada=True).count(),
+    }
+    return render(request, "cantidades.html", datos)
