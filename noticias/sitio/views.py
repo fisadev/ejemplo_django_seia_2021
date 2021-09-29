@@ -69,3 +69,7 @@ def cantidades_html(request):
         "cantidad_noticias_archivadas": Noticia.objects.filter(archivada=True).count(),
     }
     return render(request, "cantidades.html", datos)
+
+
+def robots_txt(request):
+    return render(request, "robots.txt", {})

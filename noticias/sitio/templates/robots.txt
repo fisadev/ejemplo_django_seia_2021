@@ -1,0 +1,5 @@
+User-agent: *
+# let's keep the robots away from our half-baked stuff
+Disallow: /staging
+Disallow: /admin
+
